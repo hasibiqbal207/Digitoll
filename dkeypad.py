@@ -21,6 +21,7 @@ for i in range(4) :
 
 instr = ' '
 indicator = True
+reindicator = False
 
 try:
 	while(indicator):
@@ -29,44 +30,87 @@ try:
 			for i in range(4):
 				if GPIO.input(ROW[i])==0:
 					if MATRIX[i][j] == 'A':
+						if reindicator==False:
+							continue
+						print 'Enter Amount : '
 						instr = ''
 						time.sleep(1)
 					elif MATRIX[i][j] == 'B':
+						if reindicator == False:
+							continue
 						print 'Transaction Successful'
 						print 'Amount :', instr 
 						instr = ''
+						indicator = False
+						reindicator = False
 					elif MATRIX[i][j] == 'C':
+						if reindicator == False:
+							continue
 						print 'Transaction Cancelled'
 						indicator = False
+						reindicator = False
+					elif MATRIX[i][j] == 'D':
+						print 'Recharge Mood On'
+						reindicator = True 
 					elif MATRIX[i][j] == '0':
+						if reindicator == False:
+							continue
 						instr += MATRIX[i][j]
+						print instr
 						time.sleep(0.5)
 					elif MATRIX[i][j] == '1':
+						if reindicator == False:
+							continue
 						instr += MATRIX[i][j]
+						print instr
 						time.sleep(0.5)
 					elif MATRIX[i][j] == '2':
+						if reindicator == False:
+							continue
 						instr += MATRIX[i][j]
+						print instr
 						time.sleep(0.5)
 					elif MATRIX[i][j] == '3':
+						if reindicator == False:
+							continue
 						instr += MATRIX[i][j]
+						print instr
 						time.sleep(0.5)
 					elif MATRIX[i][j] == '4':
+						if reindicator == False:
+							continue
 						instr += MATRIX[i][j]
+						print instr
 						time.sleep(0.5)
 					elif MATRIX[i][j] == '5':
+						if reindicator == False:
+							continue
 						instr += MATRIX[i][j]
+						print instr
 						time.sleep(0.5)
 					elif MATRIX[i][j] == '6':
+						if reindicator == False:
+							continue
 						instr += MATRIX[i][j]
+						print instr
 						time.sleep(0.5)
 					elif MATRIX[i][j] == '7':
+						if reindicator == False:
+							continue
 						instr += MATRIX[i][j]
+						print instr
 						time.sleep(0.5)
 					elif MATRIX[i][j] == '8':
+						if reindicator == False:
+							continue 
 						instr += MATRIX[i][j]
+						print instr
 						time.sleep(0.5)
 					elif MATRIX[i][j] == '9':
+						if reindicator == False:
+							continue
 						instr += MATRIX[i][j]
+						print instr
 						time.sleep(0.5)
 					else:
 						time.sleep(0.2)
