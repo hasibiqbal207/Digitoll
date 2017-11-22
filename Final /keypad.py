@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 MATRIX = [['1','2','3','A'],
@@ -9,8 +9,8 @@ MATRIX = [['1','2','3','A'],
           ['7','8','9','C'],
           ['*','0','#','D']]
 
-ROW = [12,16,18,32]
-COL = [7,11,13,15]
+ROW = [18,23,24,12]
+COL = [4,17,27,22]
 
 for j in range(4) : 
 	GPIO.setup(COL[j],GPIO.OUT)
